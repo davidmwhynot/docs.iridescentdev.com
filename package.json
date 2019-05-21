@@ -1,0 +1,11 @@
+{
+  "name": "docs.iridescentdev.com",
+  "version": "1.0.0",
+  "description": "Documentation for client websites built by Iridescent Development.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "David Whynot",
+  "license": "ISC"
+}
