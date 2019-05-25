@@ -1,0 +1,5 @@
+{
+	"title": "Managing Products",
+	"description": "Add products, SKUs, and more.",
+	"pages": ["overview", "add-products", "add-skus"]
+}
