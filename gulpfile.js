@@ -391,15 +391,31 @@ gulp.task('articles', done => {
 						if (page === navPage) navPageActive = 'active';
 
 						// inject values
-						let navItem = injector(navItemTemplate, navPageActive, 'active');
-						navItem = injector(navItem, navPageLink, 'link');
-						navItem = injector(navItem, navPageTitle, 'title');
+						let navItem = injector({
+							source: navItemTemplate,
+							input: navPageActive,
+							tag: 'active'
+						});
+						navItem = injector({
+							source: navItem,
+							input: navPageLink,
+							tag: 'link'
+						});
+						navItem = injector({
+							source: navItem,
+							input: navPageTitle,
+							tag: 'title'
+						});
 
 						navItems += navItem;
 					}
 
 					// add nav items to nav
-					outputNav = injector(navTemplate, navItems, 'items');
+					outputNav = injector({
+						source: navTemplate,
+						input: navItems,
+						tag: 'items'
+					});
 				}
 
 				console.log('outputNav');
@@ -442,17 +458,30 @@ gulp.task('articles', done => {
 	done();
 });
 
-function injector(source, input, tag) {
-	console.log('source:');
-	console.log(source);
-	const injectObject = new InjectString(source, {
+// injects a number of key-value pairs into a template file using inject-string
+// @param template - the template string
+// @param fields - an object where the property names should match the tag inside the template string where the value of said properties should be stored
+// @returns - a string with the injected fields
+function injector(template, fields) {
+	// get tags from object keys in fields object
+	const tags = Object.keys(fields);
+
+	for (const tag of tags) {
+		template = inject(template, tag, fields[tag]);
+	}
+
+	return template;
+}
+
+function inject(template, tag, value) {
+	const injectObject = new InjectString(template, {
 		stripTags: true,
 		tag: tag,
 		delimiters: ['{{{', '}}}'],
 		newlines: false
 	});
 
-	return injectObject.replace(input);
+	return injectObject.replace(value);
 }
 
 gulp.task('build', gulp.series('index', 'topics', 'articles'));
