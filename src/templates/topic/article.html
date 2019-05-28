@@ -1,11 +1,11 @@
 <div class="mb-3 col-sm-6 col-md-4 col-lg-3">
-	<div class="card h-100">
-		<a href="{{{link1}}}" class="card-header">{{{title}}}</a>
-		{{{pages}}}
-		<a href="{{{link2}}}" class="text-reset">
-			<div class="card-body">
-				<div class="card-text">{{{description}}}</div>
-			</div>
-		</a>
-	</div>
+	<a href="{{{link1}}}" class="text-reset">
+		<div class="card h-100">
+			<h5 class="card-header">{{{title}}}</h5>
+			{{{pages}}}
+			<a href="{{{link2}}}" class="text-reset card-body d-flex flex-column">
+				<p class="card-text">{{{description}}}</p>
+			</a>
+		</div>
+	</a>
 </div>

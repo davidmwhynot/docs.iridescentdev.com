@@ -40,7 +40,13 @@ const build = () => {
 					// format page title
 					const pageTitle = titleCase(page.replace(/-/g, ' '));
 
-					// build page item
+					// check if this is the first page
+					let pageFirst = ' ';
+					if (meta.pages.indexOf(page) === 0) {
+						pageFirst += 'first-page';
+					}
+
+					// generate page item
 					const pageItemTemplate = readFileSync(
 						'./src/templates/topic/pages-item.html',
 						'utf8'
@@ -49,7 +55,8 @@ const build = () => {
 					// inject values into template
 					const pageItem = injector(pageItemTemplate, {
 						link: pageLink,
-						title: pageTitle
+						title: pageTitle,
+						first: pageFirst
 					});
 
 					pageItems += pageItem;
