@@ -1,22 +1,21 @@
 {
-  "name": "docs.iridescentdev.com",
-  "version": "1.0.0",
-  "description": "Documentation for client websites built by Iridescent Development.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "David Whynot",
-  "license": "ISC",
-  "dependencies": {
-    "gulp": "^4.0.2",
-    "gulp-concat": "^2.6.1",
-    "gulp-ext-replace": "^0.3.0",
-    "gulp-inject-string": "^1.1.2",
-    "gulp-markdown": "^4.0.0",
-    "highlight.js": "^9.15.6",
-    "inject-string": "^0.1.4",
-    "marked": "^0.6.2",
-    "title-case": "^2.1.1"
-  }
+	"name": "docs.iridescentdev.com",
+	"version": "1.0.0",
+	"description": "Documentation for client websites built by Iridescent Development.",
+	"main": "index.js",
+	"scripts": {
+		"start": "node index.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "David Whynot",
+	"license": "ISC",
+	"dependencies": {
+		"highlight.js": "^9.15.6",
+		"inject-string": "^0.1.4",
+		"marked": "^0.6.2",
+		"title-case": "^2.1.1"
+	},
+	"devDependencies": {
+		"gulp": "^4.0.2"
+	}
 }

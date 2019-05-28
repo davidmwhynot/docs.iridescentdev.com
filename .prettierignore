@@ -1,3 +1,4 @@
 src/templates/**/header.html
 src/templates/**/footer.html
 nav.html
+pages.html
