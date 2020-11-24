@@ -10,7 +10,7 @@
 	"author": "David Whynot",
 	"license": "ISC",
 	"dependencies": {
-		"highlight.js": "^9.15.6",
+		"highlight.js": "^10.1.2",
 		"inject-string": "^0.1.4",
 		"marked": "^0.6.2",
 		"title-case": "^2.1.1"
